@@ -1,0 +1,8 @@
+The App.js file was using the function watch provided by some Web version but
+myContract.MyEvent.watch has been changed in Web3 v1. It is now myContract.events.MyEvent. 
+For that reason, the watchLogs() function in App.js had to be modified accordingly.
+
+To make it work I used this: https://web3js.readthedocs.io/en/v1.3.0/web3-eth-contract.html#contract-events
+
+I also used not an Http but a Websocket Provider. This change is reflected in
+the file client/utils/getWeb3.js, look for the line starting with `var provider = `
